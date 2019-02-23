@@ -1,10 +1,10 @@
 $primary-dark: #32353e;
 $primary-light: #4f8eb7;
 $secondary-light: #adb0c3;
-$accent: #d85857;
+$accent-color: #d85857;
 
-@mixin shadow($color) {
-  box-shadow: 3px 5px 10px 1px rgba($color, 0.5), -3px 5px 10px 1px rgba($color, 0.5);
+@mixin shadow($color, $percent) {
+  box-shadow: 3px 5px 10px 1px rgba($color, $percent), -3px 5px 10px 1px rgba($color, $percent);
 }
 
 @mixin flex-define($direction, $grow, $justify) {
@@ -42,6 +42,13 @@ body, html, #wrapper {
 
 nav {
   @include flex-define(row, 1, flex-end);
+  background-color:$primary-dark;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 5;
+
   .link {
     padding: 10px;
   }
@@ -52,14 +59,23 @@ nav {
 
   #header-container {
     @include flex-define(column, 5, flex-start);
+    margin-top: 50px;
 
     #header {
-      height: 350px;
+      height: 300px;
       background: url('../images/background.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       z-index: 2;
+
+      text-align: center;
+      color: white;
+      text-shadow:
+          -1px -1px 0 $primary-dark,
+          1px -1px 0 $primary-dark,
+          -1px 1px 0 $primary-dark,
+          1px 1px 0 $primary-dark;
 
       #header-cutout {
         height: 100%;
@@ -70,16 +86,33 @@ nav {
       }
     }
 
-    main {
+    #blue-side {
       border-radius: 10px;
-      margin-left: 30px;
-      margin-right: 30px;
+      margin-left: 50px;
+      margin-right: 50px;
       background-color: $primary-light;
       @include flex-define(column, 3, space-evenly);
+      @include shadow(black, 0.3);
       z-index: 2;
 
       #main-top-bar {
         @include flex-define(row, 1, space-evenly);
+
+        .tab  {
+          width: 100%;
+          text-align: center;
+          padding: 10px;
+        }
+
+        #main-top-right {
+          background-color: $primary-light;
+          border-top-left-radius: 10px;
+        }
+
+        #main-top-left {
+          background-color: $accent-color;
+          border-top-right-radius: 10px;
+        }
       }
 
       #main-content {
@@ -93,14 +126,32 @@ nav {
         article {
           margin: 10px;
           background-color: $secondary-light;
-          @include shadow($primary-dark);
+          @include shadow($primary-dark, 0.5);
 
           .main-header {
             background-color: $primary-dark;
+            color: white;
+            padding: 10px;
           }
 
           .main-body {
             padding: 10px;
+
+            img {
+              padding: 5px;
+            }
+
+            .align-right {
+              float:right;
+              width: 100px;
+              margin-left: 10px;
+            }
+
+            .align-left {
+              float:left;
+              width: 100px;
+              margin-right: 10px;
+            }
           }
 
           .main-footer {
@@ -110,25 +161,39 @@ nav {
         }
 
         aside {
-          background-color: $secondary-light;
-          margin: 10px;
-          flex-grow: 1;
           flex-basis: 30%;
+          @include flex-define(column, 1, flex-start);
 
-          #aside-header {
-            background-color: $primary-dark;
-            margin: 0;
-            color: $secondary-light;
-          }
-
-          #aside-body {
-            padding: 10px;
+          #sidebar {
+            flex-grow: 1;
+            background-color: $secondary-light;
             margin: 10px;
+            @include shadow($primary-dark, 0.5);
+
+            #aside-header {
+              background-color: $primary-dark;
+              margin: 0;
+              color: white;
+              padding: 10px;
+            }
+
+            #aside-body {
+              padding: 10px;
+              margin: 10px;
+            }
+
+            #aside-footer {
+              text-align: right;
+              margin-right: 10px;
+              margin-bottom: 30px;
+            }
           }
 
-          #aside-footer {
-            text-align: right;
-            margin-right: 10px;
+          .spacer {
+            content: "";
+            flex-grow: 5;
+            width: 100%;
+            height: 100%;
           }
 
         }
@@ -139,5 +204,7 @@ nav {
 }
 
 footer {
-  flex-grow: 1;
+  @include flex-define(row, 1, space-between);
+  align-items: center;
+  height: 80px;
 }
