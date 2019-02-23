@@ -32,6 +32,7 @@ main {
     @include flex-define(column, 2, flex-start);
     background: url('../images/background.jpg');
     background-repeat: no-repeat;
+    background-size: contain;
 
     #header {
       height: 350px;
