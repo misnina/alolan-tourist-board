@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo|Coiny');
+
 $primary-dark: #32353e;
 $primary-light: #4f8eb7;
-$secondary-light: #adb0c3;
+$secondary-light: #eceaea;
 $accent-color: #d85857;
+
+$header-font: 'Coiny', cursive;
+$primary-font: 'Arimo', sans-serif;
 
 @mixin shadow($color, $percent) {
   box-shadow: 3px 5px 10px 1px rgba($color, $percent), -3px 5px 10px 1px rgba($color, $percent);
@@ -34,6 +39,16 @@ body, html, #wrapper {
   background-color: $primary-dark;
   margin: 0;
   padding: 0;
+  font-family: $primary-font;
+  color: $primary-dark;
+  @include links (white, white, $secondary-light, white);
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: normal;
+  font-family: $header-font;
+
 }
 
 #wrapper {
@@ -42,6 +57,7 @@ body, html, #wrapper {
 
 nav {
   @include flex-define(row, 1, flex-end);
+  align-items: center;
   background-color:$primary-dark;
   position: fixed;
   top: 0;
@@ -49,8 +65,16 @@ nav {
   width: 100%;
   z-index: 5;
 
-  .link {
-    padding: 10px;
+  #title {
+    color: white;
+    margin-left: 40px;
+  }
+
+  #links {
+    @include flex-define(row, 1, flex-end);
+    .link {
+      padding: 10px;
+    }
   }
 }
 
@@ -78,7 +102,7 @@ nav {
           1px 1px 0 $primary-dark;
 
       #header-cutout {
-        height: 100%;
+        height: 90%;
         background: url('../images/cutout.png');
         background-size: contain;
         background-repeat: no-repeat;
@@ -86,18 +110,11 @@ nav {
       }
     }
 
-    #blue-side {
-      border-radius: 10px;
-      margin-left: 50px;
-      margin-right: 50px;
-      background-color: $primary-light;
-      @include flex-define(column, 3, space-evenly);
-      @include shadow(black, 0.3);
-      z-index: 2;
-
-      #main-top-bar {
+    #main-top-bar {
         @include flex-define(row, 1, space-evenly);
-
+        margin-left: 50px;
+        margin-right: 50px;
+        z-index: 2;
         .tab  {
           width: 100%;
           text-align: center;
@@ -115,96 +132,148 @@ nav {
         }
       }
 
-      #main-content {
-        @include flex-define(row, 3, none);
+    #blue-side, #red-side {
+      @include flex-define(column, 3, space-evenly);
+      @include shadow(black, 0.3);
+      @include links($accent-color, $accent-color, $primary-light, $accent-color);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      margin-left: 50px;
+      margin-right: 50px;
+      background-color: $primary-light;
+      z-index: 2;
 
-        #content {
-          @include flex-define(column, 1, flex-end);
-          flex-basis: 70%;
+      a {
+        font-weight: bold;
+      }
+
+    }
+
+    #red-side {
+      display: none;
+      background-color: $accent-color;
+      @include links($primary-light, $primary-light, $accent-color, $primary-light);
+    }
+
+    .main-content {
+      @include flex-define(row, 3, none);
+      margin: 10px;
+
+      .content {
+        @include flex-define(column, 1, flex-end);
+        flex-basis: 70%;
+      }
+
+      article {
+        margin: 10px;
+        background-color: $secondary-light;
+        @include shadow($primary-dark, 0.5);
+
+        .main-header {
+          background-color: $primary-dark;
+          color: white;
+          padding: 10px;
         }
 
-        article {
-          margin: 10px;
+        .main-body {
+          padding: 10px;
+
+          h1, h2, h3, h4 {
+            font-family: $primary-font;
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+          }
+
+          hr {
+            background-color: $primary-dark;
+            border: 0.5px solid $primary-dark;
+          }
+
+          img {
+            padding: 5px;
+          }
+
+          .align-right {
+            float:right;
+            width: 100px;
+            margin-left: 10px;
+          }
+
+          .align-left {
+            float:left;
+            width: 100px;
+            margin-right: 10px;
+          }
+        }
+
+        .main-footer {
+          text-align: right;
+          padding: 10px;
+          font-size: 12px;
+        }
+      }
+
+      aside {
+        flex-basis: 30%;
+        @include flex-define(column, 1, flex-start);
+
+        .sidebar {
+          flex-grow: 1;
           background-color: $secondary-light;
+          margin: 10px;
           @include shadow($primary-dark, 0.5);
 
-          .main-header {
+          .aside-header {
             background-color: $primary-dark;
+            margin: 0;
             color: white;
             padding: 10px;
           }
 
-          .main-body {
+          .aside-body {
             padding: 10px;
-
-            img {
-              padding: 5px;
-            }
-
-            .align-right {
-              float:right;
-              width: 100px;
-              margin-left: 10px;
-            }
-
-            .align-left {
-              float:left;
-              width: 100px;
-              margin-right: 10px;
-            }
-          }
-
-          .main-footer {
-            text-align: right;
-            padding: 10px;
-          }
-        }
-
-        aside {
-          flex-basis: 30%;
-          @include flex-define(column, 1, flex-start);
-
-          #sidebar {
-            flex-grow: 1;
-            background-color: $secondary-light;
             margin: 10px;
-            @include shadow($primary-dark, 0.5);
 
-            #aside-header {
-              background-color: $primary-dark;
-              margin: 0;
-              color: white;
-              padding: 10px;
-            }
-
-            #aside-body {
-              padding: 10px;
-              margin: 10px;
-            }
-
-            #aside-footer {
-              text-align: right;
-              margin-right: 10px;
-              margin-bottom: 30px;
+            ul {
+              list-style-type: none;
+              text-align:left;
             }
           }
 
-          .spacer {
-            content: "";
-            flex-grow: 5;
-            width: 100%;
-            height: 100%;
+          .aside-footer {
+            text-align: right;
+            margin-right: 10px;
+            margin-bottom: 30px;
+            font-size: 12px;
           }
-
         }
-      }
 
+        .spacer {
+          content: "";
+          flex-grow: 5;
+          width: 100%;
+          height: 100%;
+        }
+
+      }
     }
   }
 }
 
 footer {
   @include flex-define(row, 1, space-between);
+  @include links($secondary-light, $secondary-light, $primary-light, $secondary-light);
   align-items: center;
   height: 80px;
+  padding: 10px;
+  margin-left: 80px;
+  margin-right: 80px;
+  color: white;
+  font-family: $header-font;
+
+  #footer-left  {
+    font-size: 40px;
+  }
+
 }

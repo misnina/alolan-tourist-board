@@ -1,11 +1,42 @@
-/* line 33, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+@import url("https://fonts.googleapis.com/css?family=Arimo|Coiny");
+/* line 38, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
 body, html, #wrapper {
   background-color: #32353e;
   margin: 0;
   padding: 0;
+  font-family: "Arimo", sans-serif;
+  color: #32353e;
 }
 
-/* line 39, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+/* line 23, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+body a, html a, #wrapper a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 26, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+body a:visited, html a:visited, #wrapper a:visited {
+  color: white;
+}
+
+/* line 29, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+body a:hover, html a:hover, #wrapper a:hover {
+  color: #eceaea;
+}
+
+/* line 32, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+body a:active, html a:active, #wrapper a:active {
+  color: white;
+}
+
+/* line 47, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: normal;
+  font-family: "Coiny", cursive;
+}
+
+/* line 54, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
 #wrapper {
   display: flex;
   flex-direction: column;
@@ -13,12 +44,13 @@ body, html, #wrapper {
   justify-content: flex-end;
 }
 
-/* line 43, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+/* line 58, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
 nav {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
   justify-content: flex-end;
+  align-items: center;
   background-color: #32353e;
   position: fixed;
   top: 0;
@@ -27,17 +59,31 @@ nav {
   z-index: 5;
 }
 
-/* line 52, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-nav .link {
+/* line 68, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+nav #title {
+  color: white;
+  margin-left: 40px;
+}
+
+/* line 73, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+nav #links {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+/* line 75, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+nav #links .link {
   padding: 10px;
 }
 
-/* line 57, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+/* line 81, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
 #middle {
   flex-grow: 5;
 }
 
-/* line 60, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+/* line 84, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
 #middle #header-container {
   display: flex;
   flex-direction: column;
@@ -46,7 +92,7 @@ nav .link {
   margin-top: 50px;
 }
 
-/* line 64, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+/* line 88, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
 #middle #header-container #header {
   height: 300px;
   background: url("../images/background.jpg");
@@ -59,66 +105,124 @@ nav .link {
   text-shadow: -1px -1px 0 #32353e, 1px -1px 0 #32353e, -1px 1px 0 #32353e, 1px 1px 0 #32353e;
 }
 
-/* line 80, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+/* line 104, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
 #middle #header-container #header #header-cutout {
-  height: 100%;
+  height: 90%;
   background: url("../images/cutout.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom center;
 }
 
-/* line 89, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side {
-  border-radius: 10px;
-  margin-left: 50px;
-  margin-right: 50px;
-  background-color: #4f8eb7;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 3;
-  justify-content: space-evenly;
-  box-shadow: 3px 5px 10px 1px rgba(0, 0, 0, 0.3), -3px 5px 10px 1px rgba(0, 0, 0, 0.3);
-  z-index: 2;
-}
-
-/* line 98, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-top-bar {
+/* line 113, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #main-top-bar {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
   justify-content: space-evenly;
+  margin-left: 50px;
+  margin-right: 50px;
+  z-index: 2;
 }
 
-/* line 101, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-top-bar .tab {
+/* line 118, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #main-top-bar .tab {
   width: 100%;
   text-align: center;
   padding: 10px;
 }
 
-/* line 107, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-top-bar #main-top-right {
+/* line 124, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #main-top-bar #main-top-right {
   background-color: #4f8eb7;
   border-top-left-radius: 10px;
 }
 
-/* line 112, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-top-bar #main-top-left {
+/* line 129, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #main-top-bar #main-top-left {
   background-color: #d85857;
   border-top-right-radius: 10px;
 }
 
-/* line 118, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content {
+/* line 135, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #blue-side, #middle #header-container #red-side {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+  justify-content: space-evenly;
+  box-shadow: 3px 5px 10px 1px rgba(0, 0, 0, 0.3), -3px 5px 10px 1px rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #4f8eb7;
+  z-index: 2;
+}
+
+/* line 23, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #blue-side a, #middle #header-container #red-side a {
+  text-decoration: none;
+  color: #d85857;
+}
+
+/* line 26, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #blue-side a:visited, #middle #header-container #red-side a:visited {
+  color: #d85857;
+}
+
+/* line 29, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #blue-side a:hover, #middle #header-container #red-side a:hover {
+  color: #4f8eb7;
+}
+
+/* line 32, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #blue-side a:active, #middle #header-container #red-side a:active {
+  color: #d85857;
+}
+
+/* line 146, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #blue-side a, #middle #header-container #red-side a {
+  font-weight: bold;
+}
+
+/* line 152, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #red-side {
+  display: none;
+  background-color: #d85857;
+}
+
+/* line 23, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #red-side a {
+  text-decoration: none;
+  color: #4f8eb7;
+}
+
+/* line 26, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #red-side a:visited {
+  color: #4f8eb7;
+}
+
+/* line 29, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #red-side a:hover {
+  color: #d85857;
+}
+
+/* line 32, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container #red-side a:active {
+  color: #4f8eb7;
+}
+
+/* line 158, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content {
   display: flex;
   flex-direction: row;
   flex-grow: 3;
   justify-content: none;
+  margin: 10px;
 }
 
-/* line 121, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content #content {
+/* line 162, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content .content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -126,52 +230,67 @@ nav .link {
   flex-basis: 70%;
 }
 
-/* line 126, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content article {
+/* line 167, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content article {
   margin: 10px;
-  background-color: #adb0c3;
+  background-color: #eceaea;
   box-shadow: 3px 5px 10px 1px rgba(50, 53, 62, 0.5), -3px 5px 10px 1px rgba(50, 53, 62, 0.5);
 }
 
-/* line 131, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content article .main-header {
+/* line 172, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content article .main-header {
   background-color: #32353e;
   color: white;
   padding: 10px;
 }
 
-/* line 137, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content article .main-body {
+/* line 178, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content article .main-body {
   padding: 10px;
 }
 
-/* line 140, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content article .main-body img {
+/* line 181, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content article .main-body h1, #middle #header-container .main-content article .main-body h2, #middle #header-container .main-content article .main-body h3, #middle #header-container .main-content article .main-body h4 {
+  font-family: "Arimo", sans-serif;
+  font-weight: bold;
+  text-align: center;
   padding: 5px;
 }
 
-/* line 144, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content article .main-body .align-right {
+/* line 188, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content article .main-body hr {
+  background-color: #32353e;
+  border: 0.5px solid #32353e;
+}
+
+/* line 193, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content article .main-body img {
+  padding: 5px;
+}
+
+/* line 197, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content article .main-body .align-right {
   float: right;
   width: 100px;
   margin-left: 10px;
 }
 
-/* line 150, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content article .main-body .align-left {
+/* line 203, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content article .main-body .align-left {
   float: left;
   width: 100px;
   margin-right: 10px;
 }
 
-/* line 157, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content article .main-footer {
+/* line 210, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content article .main-footer {
   text-align: right;
   padding: 10px;
+  font-size: 12px;
 }
 
-/* line 163, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content aside {
+/* line 217, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content aside {
   flex-basis: 30%;
   display: flex;
   flex-direction: column;
@@ -179,44 +298,51 @@ nav .link {
   justify-content: flex-start;
 }
 
-/* line 167, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content aside #sidebar {
+/* line 221, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content aside .sidebar {
   flex-grow: 1;
-  background-color: #adb0c3;
+  background-color: #eceaea;
   margin: 10px;
   box-shadow: 3px 5px 10px 1px rgba(50, 53, 62, 0.5), -3px 5px 10px 1px rgba(50, 53, 62, 0.5);
 }
 
-/* line 173, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content aside #sidebar #aside-header {
+/* line 227, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content aside .sidebar .aside-header {
   background-color: #32353e;
   margin: 0;
   color: white;
   padding: 10px;
 }
 
-/* line 180, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content aside #sidebar #aside-body {
+/* line 234, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content aside .sidebar .aside-body {
   padding: 10px;
   margin: 10px;
 }
 
-/* line 185, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content aside #sidebar #aside-footer {
+/* line 238, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content aside .sidebar .aside-body ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+/* line 244, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content aside .sidebar .aside-footer {
   text-align: right;
   margin-right: 10px;
   margin-bottom: 30px;
+  font-size: 12px;
 }
 
-/* line 192, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
-#middle #header-container #blue-side #main-content aside .spacer {
+/* line 252, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+#middle #header-container .main-content aside .spacer {
   content: "";
   flex-grow: 5;
   width: 100%;
   height: 100%;
 }
 
-/* line 206, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+/* line 264, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
 footer {
   display: flex;
   flex-direction: row;
@@ -224,6 +350,37 @@ footer {
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  padding: 10px;
+  margin-left: 80px;
+  margin-right: 80px;
+  color: white;
+  font-family: "Coiny", cursive;
+}
+
+/* line 23, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+footer a {
+  text-decoration: none;
+  color: #eceaea;
+}
+
+/* line 26, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+footer a:visited {
+  color: #eceaea;
+}
+
+/* line 29, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+footer a:hover {
+  color: #4f8eb7;
+}
+
+/* line 32, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+footer a:active {
+  color: #eceaea;
+}
+
+/* line 275, C:/Users/ninab/Documents/Code/webdesign/alola/sass/style.scss */
+footer #footer-left {
+  font-size: 40px;
 }
 
 /*# sourceMappingURL=../styles/style.map */
